@@ -1,15 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-</head>
-<body>
-<link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
 
-  <div class="min-h-screen sm:flex sm:flex-row mx-0 justify-center">
+<?php 
+
+    require './DB/db.php';
+    include './Asset/Header.php';
+
+
+?>
+<form action="App/Auth.php" method="post">
+<div class="min-h-screen sm:flex sm:flex-row mx-0 justify-center">
       <div class="flex-col flex  self-center p-10 sm:max-w-5xl xl:max-w-2xl  z-10">
         <div class="self-start hidden lg:flex flex-col  text-white">
           <img src="" class="mb-3">
@@ -25,14 +23,14 @@
             </div>
             <div class="space-y-5">
                         <div class="space-y-2">
-                              <label class="text-sm font-medium text-gray-700 tracking-wide">Email</label>
-              <input class=" w-full text-base px-4 py-2 border  border-gray-300 rounded-lg focus:outline-none focus:border-green-400" type="" placeholder="mail@gmail.com">
+                              <label class="text-sm font-medium text-gray-700 tracking-wide">Username</label>
+              <input class=" w-full text-base px-4 py-2 border  border-gray-300 rounded-lg focus:outline-none focus:border-green-400" type="" placeholder="Enter your Username" name="__Username" required>
               </div>
                           <div class="space-y-2">
               <label class="mb-5 text-sm font-medium text-gray-700 tracking-wide">
                 Password
               </label>
-              <input class="w-full content-center text-base px-4 py-2 border  border-gray-300 rounded-lg focus:outline-none focus:border-green-400" type="" placeholder="Enter your password">
+              <input class="w-full content-center text-base px-4 py-2 border  border-gray-300 rounded-lg focus:outline-none focus:border-green-400" type="password" placeholder="Enter your password" name="__Password" required>
             </div>
               <div class="flex items-center justify-between">
            
@@ -53,5 +51,7 @@
       </div>
   </div>
 </div>
-</body>
-</html>
+
+</form>
+<?php include 'Asset/Footer.php'; ?>
+
