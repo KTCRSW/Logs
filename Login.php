@@ -6,6 +6,8 @@
 
 
 ?>
+  <link rel="icon" type="image/x-icon" href="./Asset/Img/logo.png">
+
 <form action="App/Auth.php" method="post">
 <div class="min-h-screen sm:flex sm:flex-row mx-0 justify-center">
       <div class="flex-col flex  self-center p-10 sm:max-w-5xl xl:max-w-2xl  z-10">

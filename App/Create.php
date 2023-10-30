@@ -2,9 +2,15 @@
 
     require_once '../DB/db.php';
 
-    if(isset($_POST['caseNumber'])){
-        $data = $_POST;
+    $sql = "INSERT INTO mains(LOGS_ID, LOGS_DATE, LOGS_CASE_NUMBER, LOGS_CASE_CONTACT, LOGS_LOCATION, LOGS_RANGE_TIME, LOGS_PHONE, LOGS_TECHNICIANS)
+    VALUE ('', '".$_POST['__caseDate']."', '".$_POST['__caseNumber']."', '".$_POST['__caseContact']."', '".$_POST['__caseLocation']."', '".$_POST['__caseRange']."'
+    , '".$_POST['__casePhone']."', '".$_POST['__caseTechnician']."')
+    ";
+    $query = $db->query($sql);
+    if($query){
+        echo "Succ";
+    } else {
+        echo "Err";
     }
-
 
 ?>

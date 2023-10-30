@@ -11,7 +11,7 @@
 
 
 <div class="flex w-full  h-screen flex justify-center items-center ">
-    <form class="w-full max-w-lg">
+    <form class="w-full max-w-lg" action="./App/Create.php" method="post">
         <div class="md:flex md:items-center mb-6">
             <div class="md:w-1/3">
                 <label class="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4" for="inline-full-name">
@@ -33,7 +33,7 @@
             <div class="md:w-2/3">
                 <input
                     class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-green-400"
-                    id="inline-password" type="text" placeholder="">
+                    id="inline-password" type="text" placeholder="" name="__caseLocation">
             </div>
         </div>
         <div class="md:flex md:items-center mb-6">
@@ -52,7 +52,7 @@
                 </div>
                 <input datepicker type="text"
                     class="bg-gray-200 border border-gray-200 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-green-400 block w-full pl-10 p-2.5 "
-                    placeholder="เลือกวันที่">
+                    placeholder="เลือกวันที่" name="__caseDate">
             </div>
         </div>
         <div class="md:flex md:items-center mb-6">
@@ -64,7 +64,7 @@
             <div class="md:w-2/3">
                 <input
                     class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-green-400"
-                    id="inline-password" type="text" placeholder="">
+                    id="inline-password" type="text" placeholder="" name="__caseContact">
             </div>
         </div>
         <div class="md:flex md:items-center mb-6">
@@ -76,7 +76,19 @@
             <div class="md:w-2/3">
                 <input
                     class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-green-400"
-                    id="inline-password" type="text" placeholder="">
+                    id="inline-password" type="text" placeholder="" name="__casePhone">
+            </div>
+        </div>
+        <div class="md:flex md:items-center mb-6">
+            <div class="md:w-1/3">
+                <label class="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4" for="inline-full-name">
+                    ระยะเวลา
+                </label>
+            </div>
+            <div class="md:w-2/3">
+                <input
+                    class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-green-400"
+                    id="inline-password" type="text" placeholder=" / วัน" name="__caseRange">
             </div>
         </div>
         <div class="md:flex md:items-center mb-6">
@@ -88,14 +100,17 @@
             <div class="md:w-2/3">
                 <input
                     class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-green-400"
-                    id="inline-password" type="text" placeholder="">
+                    id="inline-password" type="text" placeholder="" name="__caseTechnician">
             </div>
         </div>
         <div class="md:flex md:items-center">
             <div class="md:w-1/3"></div>
             <div class="md:w-2/3">
-            <button class="shadow bg-green-400  focus:shadow-outline hover:bg-green-500 focus:outline-none text-white font-bold py-2 px-8 rounded" type="button">
+            <button type="submit" name="submit" class="shadow bg-green-400  focus:shadow-outline hover:bg-green-500 focus:outline-none text-white font-bold py-2 px-8 rounded" type="button">
        ส่ง
+      </button>
+            <button onclick="history.back();" class="shadow bg-yellow-400  focus:shadow-outline hover:bg-yellow-500 focus:outline-none text-white font-bold py-2 px-8 rounded" type="button">
+       กลับ
       </button>
             </div>
         </div>
