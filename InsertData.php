@@ -123,6 +123,9 @@ include './Asset/SideNav.php';
             <button type="submit" name="submit" class="shadow bg-green-400  focus:shadow-outline hover:bg-green-500 focus:outline-none text-white font-bold py-2 px-8 rounded" type="button">
        บันทึก
        <i class="fa-regular fa-floppy-disk"></i></button>
+            <button type="submit" name="submit" class="shadow bg-blue-400  focus:shadow-outline hover:bg-blue-500 focus:outline-none text-white font-bold py-2 px-8 rounded" type="button">
+       พิมพ์
+       <i class="fa-solid fa-print"></i></button>
             <button onclick="history.back();" class="shadow bg-yellow-400  focus:shadow-outline hover:bg-yellow-500 focus:outline-none text-white font-bold py-2 px-8 rounded" type="button">
        กลับ
       </button>

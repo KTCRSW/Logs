@@ -21,10 +21,10 @@ include './Asset/SideNav.php';
                 </svg>
             </div>
             <input type="search" id="default-search"
-                class="block w-full p-4 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                placeholder="Search Mockups, Logos..." required>
+                class="block w-full p-4 pl-10 text-sm text-black border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-white dark:border-gray-600 dark:placeholder-gray-400 dark:text-black dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                placeholder="ค้นหา" required>
             <button type="submit"
-                class="text-white absolute right-2.5 bottom-2.5 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Search</button>
+                class="text-white absolute right-2.5 bottom-2.5 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">ค้นหา</button>
         </div>
     </form>
 
@@ -81,22 +81,25 @@ include './Asset/SideNav.php';
                 while($row = mysqli_fetch_assoc($query)):
                 
                 ?>
-                <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
-                    <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                <tr class="bg-white border-b dark:bg-white dark:border-gray-700">
+                    <th scope="row" class="px-6 py-4 font-bold text-gray-900 whitespace-nowrap dark:text-black">
                         <?php echo $row['LOGS_CASE_NUMBER'];?>
                     </th>
-                    <td class="px-6 py-4">
+                    <td class="px-6 py-4 text-black">
                         <?php echo $row['LOGS_DATE'];?>
 
                     </td>
-                    <td class="px-6 py-4">
+                    <td class="px-6 py-4 text-black">
                         <?php echo $row['LOGS_LOCATION'];?>
 
                     </td>
-                    <td class="px-6 py-4">
+                    <td class="px-6 py-4 text-black">
                         <?php echo $row['LOGS_TECHNICIANS'];?>
 
                     </td>
+
+
+
 
                     <td class="px-6 py-4 text-right">
                         <button type="submit" data-modal-target="authentication-modal"
@@ -265,6 +268,11 @@ include './Asset/SideNav.php';
                                                         type="button">
                                                         บันทึก
                                                         <i class="fa-regular fa-floppy-disk"></i></button>
+                                                    <button type="submit" name="submit"
+                                                        class="shadow bg-blue-400  focus:shadow-outline hover:bg-blue-500 focus:outline-none text-white font-bold py-2 px-8 rounded"
+                                                        type="button">
+                                                        พิมพ์
+                                                        <i class="fa-solid fa-print"></i></button>
                                                     <button onclick="history.back();"
                                                         class="shadow bg-yellow-400  focus:shadow-outline hover:bg-yellow-500 focus:outline-none text-white font-bold py-2 px-8 rounded"
                                                         type="button">
@@ -287,35 +295,35 @@ include './Asset/SideNav.php';
 
 </div>
 <script>
-    const editButtons = document.querySelectorAll('[data-modal-toggle]');
-    
-    editButtons.forEach(button => {
-        button.addEventListener('click', function() {
-            const modalId = button.getAttribute('data-modal-target');
-            const caseNumber = button.getAttribute('data-case-number');
-            const caseLocation = button.getAttribute('data-case-location');
-            const caseDate = button.getAttribute('data-case-date');
-            const caseTechnician = button.getAttribute('data-case-technician');
-            const caseContact = button.getAttribute('data-case-contact');
-            const casePhone = button.getAttribute('data-case-phone');
-            const caseRange = button.getAttribute('data-case-range');
-            
-            const modal = document.getElementById(modalId);
-            const caseNumberField = modal.querySelector('input[name="__caseNumber"]');
-            const caseLocationField = modal.querySelector('input[name="__caseLocation"]');
-            const caseDateField = modal.querySelector('input[name="__caseDate"]');
-            const caseTechnicianField = modal.querySelector('input[name="__caseTechnician"]');
-            const caseContactField = modal.querySelector('input[name="__caseContact"]');
-            const casePhoneField = modal.querySelector('input[name="__casePhone"]');
-            const caseRangeField = modal.querySelector('input[name="__caseRange"]');
-            
-            caseNumberField.value = caseNumber;
-            caseLocationField.value = caseLocation;
-            caseDateField.value = caseDate;
-            caseTechnicianField.value = caseTechnician;
-            caseContactField.value = caseContact;
-            casePhoneField.value = casePhone;
-            caseRangeField.value = caseRange;
-        });
+const editButtons = document.querySelectorAll('[data-modal-toggle]');
+
+editButtons.forEach(button => {
+    button.addEventListener('click', function() {
+        const modalId = button.getAttribute('data-modal-target');
+        const caseNumber = button.getAttribute('data-case-number');
+        const caseLocation = button.getAttribute('data-case-location');
+        const caseDate = button.getAttribute('data-case-date');
+        const caseTechnician = button.getAttribute('data-case-technician');
+        const caseContact = button.getAttribute('data-case-contact');
+        const casePhone = button.getAttribute('data-case-phone');
+        const caseRange = button.getAttribute('data-case-range');
+
+        const modal = document.getElementById(modalId);
+        const caseNumberField = modal.querySelector('input[name="__caseNumber"]');
+        const caseLocationField = modal.querySelector('input[name="__caseLocation"]');
+        const caseDateField = modal.querySelector('input[name="__caseDate"]');
+        const caseTechnicianField = modal.querySelector('input[name="__caseTechnician"]');
+        const caseContactField = modal.querySelector('input[name="__caseContact"]');
+        const casePhoneField = modal.querySelector('input[name="__casePhone"]');
+        const caseRangeField = modal.querySelector('input[name="__caseRange"]');
+
+        caseNumberField.value = caseNumber;
+        caseLocationField.value = caseLocation;
+        caseDateField.value = caseDate;
+        caseTechnicianField.value = caseTechnician;
+        caseContactField.value = caseContact;
+        casePhoneField.value = casePhone;
+        caseRangeField.value = caseRange;
     });
+});
 </script>
