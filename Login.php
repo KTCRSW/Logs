@@ -20,17 +20,18 @@
       <div class="flex justify-center self-center   z-10">
         <div class="p-12 shadow-md bg-white mx-auto rounded-2xl w-100 ">
             <div class="mb-4">
-              <h3 class="font-semibold text-2xl text-gray-800">Sign In </h3>
+            <img src="Asset/Img/logo.png" alt="" width="128" height="128" style="text-align: center;" class="flex justify-items-center items-center align-center">
+              <h3 class="font-semibold text-2xl text-gray-800">เข้าสู่ระบบ</h3>
             
             </div>
             <div class="space-y-5">
                         <div class="space-y-2">
-                              <label class="text-sm font-medium text-gray-700 tracking-wide">Username</label>
+                              <label class="text-sm font-medium text-gray-700 tracking-wide">ชื่อผู้ใช้งาน</label>
               <input class=" w-full text-base px-4 py-2 border  border-gray-300 rounded-lg focus:outline-none focus:border-green-400" type="" placeholder="Enter your Username" name="__Username" required>
               </div>
                           <div class="space-y-2">
               <label class="mb-5 text-sm font-medium text-gray-700 tracking-wide">
-                Password
+                รหัสผ่าน
               </label>
               <input class="w-full content-center text-base px-4 py-2 border  border-gray-300 rounded-lg focus:outline-none focus:border-green-400" type="password" placeholder="Enter your password" name="__Password" required>
             </div>
@@ -40,7 +41,7 @@
             </div>
             <div>
               <button type="submit" class="w-full flex justify-center bg-green-400  hover:bg-green-500 text-gray-100 p-3  rounded-full tracking-wide font-semibold  shadow-lg cursor-pointer transition ease-in duration-500">
-                Sign in
+                เข้าสู่ระบบ
               </button>
             </div>
             </div>

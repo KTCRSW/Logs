@@ -8,7 +8,19 @@
     ";
     $query = $db->query($sql);
     if($query){
-        echo "Succ";
+        header("Refresh:1.3; url=../index.php");
+                include("../Asset/Header.php");
+                echo "<script>setTimeout(function() {
+                Swal.fire({
+                    icon: 'success',
+                    title: 'สำเร็จ',
+                    text: 'ระบบกำลังพาคุณไป' ,
+                    showCancelButton: false,
+                    showConfirmButton: false
+                }, function() {
+                    window.location = '../../Frontend/teacher/index.php';
+                });
+                 });</script>";   
     } else {
         echo "Err";
     }
