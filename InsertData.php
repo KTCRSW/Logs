@@ -27,7 +27,7 @@ include './Asset/SideNav.php';
             <div class="md:w-2/3">
                 <input
                     class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-green-400"
-                    id="inline-full-name" type="text" value="000000001" name="__caseNumber">
+                    id="inline-full-name" type="text" value="000000001" name="__caseNumber" required>
             </div>
         </div>
         <div class="md:flex md:items-center mb-6">
@@ -39,7 +39,7 @@ include './Asset/SideNav.php';
             <div class="md:w-2/3">
                 <input
                     class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-green-400"
-                    id="inline-password" type="text" placeholder="" name="__caseLocation">
+                    id="inline-password" type="text" placeholder="" name="__caseLocation" required>
             </div>
         </div>
         <div class="md:flex md:items-center mb-6">
@@ -66,7 +66,7 @@ include './Asset/SideNav.php';
                     
                     echo date("m-d-Y");
                     
-                    ?>">
+                    ?>" required>
             </div>
         </div>
         <div class="md:flex md:items-center mb-6">
@@ -78,7 +78,7 @@ include './Asset/SideNav.php';
             <div class="md:w-2/3">
                 <input
                     class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-green-400"
-                    id="inline-password" type="text" placeholder="" name="__caseContact">
+                    id="inline-password" type="text" placeholder="" name="__caseContact" required>
             </div>
         </div>
         <div class="md:flex md:items-center mb-6">
@@ -90,7 +90,7 @@ include './Asset/SideNav.php';
             <div class="md:w-2/3">
                 <input
                     class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-green-400"
-                    id="inline-password" type="text" placeholder="" name="__casePhone">
+                    id="inline-password" type="text" placeholder="" name="__casePhone" required>
             </div>
         </div>
         <div class="md:flex md:items-center mb-6">
@@ -102,7 +102,7 @@ include './Asset/SideNav.php';
             <div class="md:w-2/3">
                 <input
                     class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-green-400"
-                    id="inline-password" type="text" placeholder=" / วัน" name="__caseRange">
+                    id="inline-password" type="text" placeholder=" / วัน" name="__caseRange" required>
             </div>
         </div>
         <div class="md:flex md:items-center mb-6">
@@ -114,7 +114,7 @@ include './Asset/SideNav.php';
             <div class="md:w-2/3">
                 <input
                     class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-green-400"
-                    id="inline-password" type="text" placeholder="" name="__caseTechnician">
+                    id="inline-password" type="text" placeholder="" name="__caseTechnician" required>
             </div>
         </div>
         <div class="md:flex md:items-center">

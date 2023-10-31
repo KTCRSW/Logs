@@ -10,13 +10,12 @@
     <script src="
 https://cdn.jsdelivr.net/npm/sweetalert2@11.8.0/dist/sweetalert2.all.min.js
 "></script>
-    <link href="
-https://cdn.jsdelivr.net/npm/sweetalert2@11.8.0/dist/sweetalert2.min.css
-" rel="stylesheet">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://kit.fontawesome.com/7360243360.js" crossorigin="anonymous"></script>
 
     <style>
     * {
