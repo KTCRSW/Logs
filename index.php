@@ -28,7 +28,7 @@ include './Asset/SideNav.php';
                 class="text-white absolute right-2.5 bottom-2.5 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">ค้นหา</button>
         </div>
     </form>
-
+    
     <div class="relative overflow-x-auto shadow-md sm:rounded-lg mt-5">
 
         <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
@@ -82,7 +82,7 @@ include './Asset/SideNav.php';
                 while($row = mysqli_fetch_assoc($query)):
                 
                 ?>
-                <tr class="bg-white border-b dark:bg-white dark:border-gray-700">
+                <tr class="bg-white border-b dark:bg-white dark:border-gray-200">
                     <th scope="row" class="px-6 py-4 font-bold text-gray-900 whitespace-nowrap dark:text-black">
                         <?php echo $row['LOGS_CASE_NUMBER'];?>
                     </th>
@@ -112,9 +112,9 @@ include './Asset/SideNav.php';
                             data-case-contact="<?php echo $row['LOGS_CASE_CONTACT']; ?>"
                             data-case-phone="<?php echo $row['LOGS_PHONE']; ?>"
                             data-case-range="<?php echo $row['LOGS_RANGE_TIME']; ?>"
-                            class="font-medium text-blue-600 dark:text-blue-500 hover:underline"
-                            style="text-decoration:none;color:orange;">
-                            <i class="fa-regular fa-pen-to-square"></i>Edit
+                            class="font-bold text-blue-600 text-red-300  hover:underline"
+                            style="text-decoration:none;color:;">
+                            <i class="fa-regular fa-pen-to-square text-red-300"></i>แก้ไข
                         </button>
 
 
@@ -123,7 +123,7 @@ include './Asset/SideNav.php';
 
                             <div class="relative w-full max-w-md max-h-full">
                                 <!-- Modal content -->
-                                <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
+                                <div class="relative bg-white rounded-lg shadow dark:bg-gray-100">
                                     <button type="button"
                                         class="absolute top-3 right-2.5 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ml-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white"
                                         data-modal-hide="authentication-modal">
@@ -202,84 +202,72 @@ include './Asset/SideNav.php';
                                                 </div>
                                             </div>
                                             <div class="md:flex md:items-center mb-6">
-                                                <div class="md:w-1/3">
-                                                    <label
-                                                        class="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4"
-                                                        for="inline-full-name">
-                                                        ชื่อผู้ติดต่อ
-                                                    </label>
-                                                </div>
-                                                <div class="md:w-2/3">
-                                                    <input
-                                                        class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-green-400"
-                                                        id="inline-password" type="text" placeholder=""
-                                                        name="__caseContact" required>
-                                                </div>
-                                            </div>
-                                            <div class="md:flex md:items-center mb-6">
-                                                <div class="md:w-1/3">
-                                                    <label
-                                                        class="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4"
-                                                        for="inline-full-name">
-                                                        เบอร์โทรศัพท์
-                                                    </label>
-                                                </div>
-                                                <div class="md:w-2/3">
-                                                    <input
-                                                        class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-green-400"
-                                                        id="inline-password" type="text" placeholder=""
-                                                        name="__casePhone" required>
-                                                </div>
-                                            </div>
-                                            <div class="md:flex md:items-center mb-6">
-                                                <div class="md:w-1/3">
-                                                    <label
-                                                        class="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4"
-                                                        for="inline-full-name">
-                                                        ระยะเวลาดำเนินงาน
-                                                    </label>
-                                                </div>
-                                                <div class="md:w-2/3">
-                                                    <input
-                                                        class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-green-400"
-                                                        id="inline-password" type="text" placeholder=" / วัน"
-                                                        name="__caseRange" required>
-                                                </div>
-                                            </div>
-                                            <div class="md:flex md:items-center mb-6">
-                                                <div class="md:w-1/3">
-                                                    <label
-                                                        class="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4"
-                                                        for="inline-full-name">
-                                                        ช่างผู้ทำงาน
-                                                    </label>
-                                                </div>
-                                                <div class="md:w-2/3">
-                                                    <input
-                                                        class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-green-400"
-                                                        id="inline-password" type="text" placeholder=""
-                                                        name="__caseTechnician" required>
-                                                </div>
-                                            </div>
-                                            <div class="md:flex md:items-center">
-                                                <div class="md:w-1/3"></div>
-                                                <div class="md:w-2/3">
+            <div class="md:w-1/3">
+                <label class="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4" for="inline-full-name">
+                    ชื่อผู้ติดต่อ
+                </label>
+            </div>
+            <div class="md:w-2/3">
+                <input
+                    class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-green-400"
+                    id="inline-password" type="text" placeholder="" name="__caseContact" required>
+            </div>
+        </div>
+        <div class="md:flex md:items-center mb-6">
+            <div class="md:w-1/3">
+                <label class="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4" for="inline-full-name">
+                    เบอร์โทรศัพท์
+                </label>
+            </div>
+            <div class="md:w-2/3">
+                <input
+                    class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-green-400"
+                    id="inline-password" type="text" placeholder="" name="__casePhone" required>
+            </div>
+        </div>
+        <div class="md:flex md:items-center mb-6">
+            <div class="md:w-1/3">
+                <label class="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4" for="inline-full-name">
+                    ระยะเวลาดำเนินงาน
+                </label>
+            </div>
+            <div class="md:w-2/3">
+                <input
+                    class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-green-400"
+                    id="inline-password" type="text" placeholder=" / วัน" name="__caseRange" required>
+            </div>
+        </div>
+        <div class="md:flex md:items-center mb-6">
+            <div class="md:w-1/3">
+                <label class="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4" for="inline-full-name">
+                    ช่างผู้ทำงาน
+                </label>
+            </div>
+            <div class="md:w-2/3">
+                <input
+                    class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-green-400"
+                    id="inline-password" type="text" placeholder="" name="__caseTechnician" required>
+            </div>
+        </div>
+        <div class="w-full   items-center">
+            <div class="w-full gap-2 flex justify-end max-[767px]:justify-center     ">
                                                     <button type="submit" name="submit"
-                                                        class="shadow bg-green-400  focus:shadow-outline hover:bg-green-500 focus:outline-none text-white font-bold py-2 px-8 rounded"
+                                                      class="shadow bg-[#01cc85]  focus:shadow-outline hover:bg-green-500 focus:outline-none text-white font-bold py-2 px-8 rounded"
                                                         type="button">
                                                         บันทึก
                                                         <i class="fa-regular fa-floppy-disk"></i></button>
                                                     <button type="submit" name="submit"
-                                                        class="shadow bg-blue-400  focus:shadow-outline hover:bg-blue-500 focus:outline-none text-white font-bold py-2 px-8 rounded"
+                                                        class="shadow bg-[#2f69fd]  focus:shadow-outline hover:bg-blue-500 focus:outline-none text-white font-bold py-2 px-8 rounded"
                                                         type="button">
                                                         พิมพ์
                                                         <i class="fa-solid fa-print"></i></button>
                                                     <button onclick="history.back();"
-                                                        class="shadow bg-yellow-400  focus:shadow-outline hover:bg-yellow-500 focus:outline-none text-white font-bold py-2 px-8 rounded"
+                                                        class="shadow bg-red-500  focus:shadow-outline hover:bg-red-400 focus:outline-none text-white font-bold py-2 px-8 rounded"
                                                         type="button">
                                                         กลับ
                                                     </button>
                                                 </div>
+        </div>
                                             </div>
                                         </form>
                                     </div>

@@ -1,3 +1,5 @@
+<link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.0.0/flowbite.min.css" rel="stylesheet" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.0.0/flowbite.min.js"></script>
 <?php 
 
 include './Asset/Header.php';
@@ -15,9 +17,8 @@ include './Asset/SideNav.php';
 ?>
 
 
-
-<div class="flex w-full  h-screen flex justify-center items-center ">
-    <form class="w-full max-w-lg" action="./App/Create.php" method="post">
+<div class="p-4 flex justify-center items-center h-screen sm:ml-64">
+<form class="w-full max-w-lg" action="./App/Create.php" method="post">
         <div class="md:flex md:items-center mb-6">
             <div class="md:w-1/3">
                 <label class="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4" for="inline-full-name">
@@ -117,20 +118,26 @@ include './Asset/SideNav.php';
                     id="inline-password" type="text" placeholder="" name="__caseTechnician" required>
             </div>
         </div>
-        <div class="md:flex md:items-center">
-            <div class="md:w-1/3"></div>
-            <div class="md:w-2/3">
-            <button type="submit" name="submit" class="shadow bg-green-400  focus:shadow-outline hover:bg-green-500 focus:outline-none text-white font-bold py-2 px-8 rounded" type="button">
-       บันทึก
-       <i class="fa-regular fa-floppy-disk"></i></button>
-            <button type="submit" name="submit" class="shadow bg-blue-400  focus:shadow-outline hover:bg-blue-500 focus:outline-none text-white font-bold py-2 px-8 rounded" type="button">
-       พิมพ์
-       <i class="fa-solid fa-print"></i></button>
-            <button onclick="history.back();" class="shadow bg-yellow-400  focus:shadow-outline hover:bg-yellow-500 focus:outline-none text-white font-bold py-2 px-8 rounded" type="button">
-       กลับ
-      </button>
-            </div>
+        <div class="w-full   items-center">
+            <div class="w-full gap-2 flex justify-end max-[767px]:justify-center     ">
+                                                    <button type="submit" name="submit"
+                                                      class="shadow bg-[#01cc85]  focus:shadow-outline hover:bg-green-500 focus:outline-none text-white font-bold py-2 px-8 rounded"
+                                                        type="button">
+                                                        บันทึก
+                                                        <i class="fa-regular fa-floppy-disk"></i></button>
+                                                    <button type="submit" name="submit"
+                                                        class="shadow bg-[#2f69fd]  focus:shadow-outline hover:bg-blue-500 focus:outline-none text-white font-bold py-2 px-8 rounded"
+                                                        type="button">
+                                                        พิมพ์
+                                                        <i class="fa-solid fa-print"></i></button>
+                                                    <button onclick="history.back();"
+                                                        class="shadow bg-red-500  focus:shadow-outline hover:bg-red-400 focus:outline-none text-white font-bold py-2 px-8 rounded"
+                                                        type="button">
+                                                        กลับ
+                                                    </button>
+                                                </div>
         </div>
     </form>
-</div>
+  </div>
+
 <?php include 'Asset/Footer.php'; ?>
