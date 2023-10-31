@@ -20,7 +20,11 @@
       <div class="flex justify-center self-center   z-10">
         <div class="p-12 shadow-md bg-white mx-auto rounded-2xl w-100 ">
             <div class="mb-4">
-            <img src="Asset/Img/logo.png" alt="" width="128" height="128" style="text-align: center;" class="flex justify-items-center items-center align-center">
+            <img src="Asset/Img/logo.png" alt="" width="128" height="128" style="text-align: center;
+              display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;" class="flex justify-items-center items-center align-center">
               <h3 class="font-semibold text-2xl text-gray-800">เข้าสู่ระบบ</h3>
             
             </div>
@@ -45,7 +49,7 @@
               </button>
             </div>
             </div>
-            <div class="pt-5 text-center text-gray-400 text-xs">
+            <div class="pt-5 text-center text-gray-500 text-xs">
               <span>
             
               
