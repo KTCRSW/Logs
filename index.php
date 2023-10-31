@@ -28,7 +28,7 @@ include './Asset/SideNav.php';
         </div>
     </form>
     
-    <div class="relative overflow-x-auto shadow-md sm:rounded-lg mt-5">
+    <div class="relative overflow-x-auto shadow-sm sm:rounded-lg mt-5">
 
         <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
             <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
@@ -81,7 +81,7 @@ include './Asset/SideNav.php';
                 while($row = mysqli_fetch_assoc($query)):
                 
                 ?>
-                <tr class="bg-white border-b dark:bg-white dark:border-gray-700">
+                <tr class="bg-white border-b dark:bg-white dark:border-gray-200">
                     <th scope="row" class="px-6 py-4 font-bold text-gray-900 whitespace-nowrap dark:text-black">
                         <?php echo $row['LOGS_CASE_NUMBER'];?>
                     </th>
