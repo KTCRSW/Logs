@@ -262,13 +262,19 @@ include './Asset/SideNav.php';
 
                                         </div>
                                         <div class="w-full   items-center">
-                                            <div class="w-full gap-2 flex justify-end max-[767px]:justify-center     ">
-                                                <button type="submit" name="submit"
-                                                    class="shadow bg-[#01cc85]  focus:shadow-outline hover:bg-green-500 focus:outline-none text-white font-bold py-2 px-8 rounded"
-                                                    type="button">
-                                                    บันทึก
-                                                    <i class="fa-regular fa-floppy-disk"></i></button>
+                                            <div class=" gap-2 flex justify-end max-[767px]:justify-center     ">
+                                                
 
+
+
+                                                    <form action="" method="POST" class="mb-4"
+                                                    id="">
+                                                    <input type="hidden" name="" id="" hidden>
+                                                    <button type="button" onclick="printPdf()"
+                                                    class="shadow bg-[#01cc85]  focus:shadow-outline hover:bg-blue-500 focus:outline-none text-white font-bold py-2 px-8 rounded"
+                                                        >บันทึก <i class="fa-regular fa-floppy-disk"></i>
+                                                    </button>
+                                                </form>
 
 
                                                 <form action="./pdf/logs-print.php" method="POST" class="mb-4"
@@ -276,19 +282,22 @@ include './Asset/SideNav.php';
                                                     <input type="hidden" name="__caseNumber" id="caseIDField" hidden>
                                                     <button type="button" onclick="printPdf()"
                                                     class="shadow bg-[#2f69fd]  focus:shadow-outline hover:bg-blue-500 focus:outline-none text-white font-bold py-2 px-8 rounded"
-                                                        >
-                                                        Print <i class="fas fa-print"></i>
+                                                        >พิมพ์ <i class="fas fa-print"></i>
                                                     </button>
                                                 </form>
 
 
 
+                                                <form action="" method="POST" class="mb-4"
+                                                    id="">
+                                                    <input type="hidden" name="" id="" hidden>
+                                                    <button type="button" onclick="printPdf()"
+                                                    class="shadow bg-red-500  focus:shadow-outline hover:bg-blue-500 focus:outline-none text-white font-bold py-2 px-8 rounded"
+                                                        >กลับ <i class=""></i>
+                                                    </button>
+                                                </form>
 
-                                                <button onclick="history.back();"
-                                                    class="shadow bg-red-500  focus:shadow-outline hover:bg-red-400 focus:outline-none text-white font-bold py-2 px-8 rounded"
-                                                    type="button">
-                                                    กลับ
-                                                </button>
+                                              
                                             </div>
                                         </div>
                                     </div>
