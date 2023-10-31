@@ -28,8 +28,7 @@ $pdf->Cell(92,11,'',0,0);
 $pdf->Cell(205 ,7,iconv('UTF-8', 'cp874','เลขประจำตัวผู้เสียภาษี 1101400073313'),0,1);
 
 include '../DB/db.php';
-// "'..$_POST['__caseID']'"
-$sql = 'SELECT * FROM mains WHERE LOGS_ID = 1';
+$sql = 'SELECT * FROM mains WHERE LOGS_CASE_NUMBER = "'.$_POST['__caseNumber'].'"';
 $query = $db->query($sql);
 
 while ($item = mysqli_fetch_assoc($query)) {

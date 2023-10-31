@@ -28,7 +28,7 @@ include './Asset/SideNav.php';
                 class="text-white absolute right-2.5 bottom-2.5 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">ค้นหา</button>
         </div>
     </form>
-    
+
     <div class="relative overflow-x-auto shadow-md sm:rounded-lg mt-5">
 
         <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
@@ -137,60 +137,59 @@ include './Asset/SideNav.php';
 
                                     <div class="px-6 py-6 lg:px-8">
                                         <h3 class="mb-4 text-xl font-medium text-gray-900 dark:text-white"></h3>
-                                        <form class="w-full max-w-lg" action="" method="post">
-                                            <div class="md:flex md:items-center mb-6">
-                                                <div class="md:w-1/3">
-                                                    <label
-                                                        class="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4"
-                                                        for="inline-full-name">
-                                                        เลขแจ้งเคส
-                                                    </label>
-                                                </div>
-                                                <div class="md:w-2/3">
-                                                    <input
-                                                        class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-green-400"
-                                                        id="inline-full-name" type="text"
-                                                        value="<?php echo $row['LOGS_TECHNICIANS'];?>"
-                                                        name="__caseNumber" required>
-                                                </div>
+                                        <div class="md:flex md:items-center mb-6">
+                                            <div class="md:w-1/3">
+                                                <label
+                                                    class="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4"
+                                                    for="inline-full-name">
+                                                    เลขแจ้งเคส
+                                                </label>
                                             </div>
-                                            <div class="md:flex md:items-center mb-6">
-                                                <div class="md:w-1/3">
-                                                    <label
-                                                        class="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4"
-                                                        for="inline-full-name">
-                                                        สถานที่เข้างาน
-                                                    </label>
-                                                </div>
-                                                <div class="md:w-2/3">
-                                                    <input
-                                                        class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-green-400"
-                                                        id="inline-password" type="text"
-                                                        placeholder="<?php echo $row['LOGS_CASE_NUMBER'];?>"
-                                                        name="__caseLocation" required>
-                                                </div>
+                                            <div class="md:w-2/3">
+                                                <input
+                                                    class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-green-400"
+                                                    id="inline-full-name" type="text"
+                                                    value="<?php echo $row['LOGS_TECHNICIANS'];?>" name="__caseNumber"
+                                                    required>
                                             </div>
-                                            <div class="md:flex md:items-center mb-6">
-                                                <div class="md:w-1/3">
-                                                    <label
-                                                        class="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4"
-                                                        for="inline-full-name">
-                                                        วันที่แจ้งดำเนินงาน
-                                                    </label>
+                                        </div>
+                                        <div class="md:flex md:items-center mb-6">
+                                            <div class="md:w-1/3">
+                                                <label
+                                                    class="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4"
+                                                    for="inline-full-name">
+                                                    สถานที่เข้างาน
+                                                </label>
+                                            </div>
+                                            <div class="md:w-2/3">
+                                                <input
+                                                    class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-green-400"
+                                                    id="inline-password" type="text"
+                                                    placeholder="<?php echo $row['LOGS_CASE_NUMBER'];?>"
+                                                    name="__caseLocation" required>
+                                            </div>
+                                        </div>
+                                        <div class="md:flex md:items-center mb-6">
+                                            <div class="md:w-1/3">
+                                                <label
+                                                    class="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4"
+                                                    for="inline-full-name">
+                                                    วันที่แจ้งดำเนินงาน
+                                                </label>
+                                            </div>
+                                            <div class="relative md:w-2/3">
+                                                <div
+                                                    class="absolute inset-y-0 left-0 flex items-center pl-3.5 pointer-events-none">
+                                                    <svg class="w-4 h-4 text-gray-500 dark:text-gray-400"
+                                                        aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                                                        fill="currentColor" viewBox="0 0 20 20">
+                                                        <path
+                                                            d="M20 4a2 2 0 0 0-2-2h-2V1a1 1 0 0 0-2 0v1h-3V1a1 1 0 0 0-2 0v1H6V1a1 1 0 0 0-2 0v1H2a2 2 0 0 0-2 2v2h20V4ZM0 18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8H0v10Zm5-8h10a1 1 0 0 1 0 2H5a1 1 0 0 1 0-2Z" />
+                                                    </svg>
                                                 </div>
-                                                <div class="relative md:w-2/3">
-                                                    <div
-                                                        class="absolute inset-y-0 left-0 flex items-center pl-3.5 pointer-events-none">
-                                                        <svg class="w-4 h-4 text-gray-500 dark:text-gray-400"
-                                                            aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                                                            fill="currentColor" viewBox="0 0 20 20">
-                                                            <path
-                                                                d="M20 4a2 2 0 0 0-2-2h-2V1a1 1 0 0 0-2 0v1h-3V1a1 1 0 0 0-2 0v1H6V1a1 1 0 0 0-2 0v1H2a2 2 0 0 0-2 2v2h20V4ZM0 18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8H0v10Zm5-8h10a1 1 0 0 1 0 2H5a1 1 0 0 1 0-2Z" />
-                                                        </svg>
-                                                    </div>
-                                                    <input datepicker type="text"
-                                                        class="bg-gray-200 border border-gray-200 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-green-400 block w-full pl-10 p-2.5 "
-                                                        placeholder="<?php 
+                                                <input datepicker type="text"
+                                                    class="bg-gray-200 border border-gray-200 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-green-400 block w-full pl-10 p-2.5 "
+                                                    placeholder="<?php 
                     
                     echo date("m-d-Y");
                     
@@ -199,88 +198,111 @@ include './Asset/SideNav.php';
                     echo date("m-d-Y");
                     
                     ?>" required>
-                                                </div>
                                             </div>
-                                            <div class="md:flex md:items-center mb-6">
-            <div class="md:w-1/3">
-                <label class="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4" for="inline-full-name">
-                    ชื่อผู้ติดต่อ
-                </label>
-            </div>
-            <div class="md:w-2/3">
-                <input
-                    class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-green-400"
-                    id="inline-password" type="text" placeholder="" name="__caseContact" required>
-            </div>
-        </div>
-        <div class="md:flex md:items-center mb-6">
-            <div class="md:w-1/3">
-                <label class="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4" for="inline-full-name">
-                    เบอร์โทรศัพท์
-                </label>
-            </div>
-            <div class="md:w-2/3">
-                <input
-                    class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-green-400"
-                    id="inline-password" type="text" placeholder="" name="__casePhone" required>
-            </div>
-        </div>
-        <div class="md:flex md:items-center mb-6">
-            <div class="md:w-1/3">
-                <label class="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4" for="inline-full-name">
-                    ระยะเวลาดำเนินงาน
-                </label>
-            </div>
-            <div class="md:w-2/3">
-                <input
-                    class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-green-400"
-                    id="inline-password" type="text" placeholder=" / วัน" name="__caseRange" required>
-            </div>
-        </div>
-        <div class="md:flex md:items-center mb-6">
-            <div class="md:w-1/3">
-                <label class="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4" for="inline-full-name">
-                    ช่างผู้ทำงาน
-                </label>
-            </div>
-            <div class="md:w-2/3">
-                <input
-                    class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-green-400"
-                    id="inline-password" type="text" placeholder="" name="__caseTechnician" required>
-            </div>
-        </div>
-        <div class="w-full   items-center">
-            <div class="w-full gap-2 flex justify-end max-[767px]:justify-center     ">
-                                                    <button type="submit" name="submit"
-                                                      class="shadow bg-[#01cc85]  focus:shadow-outline hover:bg-green-500 focus:outline-none text-white font-bold py-2 px-8 rounded"
-                                                        type="button">
-                                                        บันทึก
-                                                        <i class="fa-regular fa-floppy-disk"></i></button>
-                                                    <button type="submit" name="submit"
-                                                        class="shadow bg-[#2f69fd]  focus:shadow-outline hover:bg-blue-500 focus:outline-none text-white font-bold py-2 px-8 rounded"
-                                                        type="button">
-                                                        พิมพ์
-                                                        <i class="fa-solid fa-print"></i></button>
-                                                    <button onclick="history.back();"
-                                                        class="shadow bg-red-500  focus:shadow-outline hover:bg-red-400 focus:outline-none text-white font-bold py-2 px-8 rounded"
-                                                        type="button">
-                                                        กลับ
+                                        </div>
+                                        <div class="md:flex md:items-center mb-6">
+                                            <div class="md:w-1/3">
+                                                <label
+                                                    class="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4"
+                                                    for="inline-full-name">
+                                                    ชื่อผู้ติดต่อ
+                                                </label>
+                                            </div>
+                                            <div class="md:w-2/3">
+                                                <input
+                                                    class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-green-400"
+                                                    id="inline-password" type="text" placeholder="" name="__caseContact"
+                                                    required>
+                                            </div>
+                                        </div>
+                                        <div class="md:flex md:items-center mb-6">
+                                            <div class="md:w-1/3">
+                                                <label
+                                                    class="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4"
+                                                    for="inline-full-name">
+                                                    เบอร์โทรศัพท์
+                                                </label>
+                                            </div>
+                                            <div class="md:w-2/3">
+                                                <input
+                                                    class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-green-400"
+                                                    id="inline-password" type="text" placeholder="" name="__casePhone"
+                                                    required>
+                                            </div>
+                                        </div>
+                                        <div class="md:flex md:items-center mb-6">
+                                            <div class="md:w-1/3">
+                                                <label
+                                                    class="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4"
+                                                    for="inline-full-name">
+                                                    ระยะเวลาดำเนินงาน
+                                                </label>
+                                            </div>
+                                            <div class="md:w-2/3">
+                                                <input
+                                                    class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-green-400"
+                                                    id="inline-password" type="text" placeholder=" / วัน"
+                                                    name="__caseRange" required>
+                                            </div>
+                                        </div>
+                                        <div class="md:flex md:items-center mb-6">
+                                            <div class="md:w-1/3">
+                                                <label
+                                                    class="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4"
+                                                    for="inline-full-name">
+                                                    ช่างผู้ทำงาน
+                                                </label>
+                                            </div>
+                                            <div class="md:w-2/3">
+                                                <input
+                                                    class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-green-400"
+                                                    id="inline-password" type="text" placeholder=""
+                                                    name="__caseTechnician" required>
+                                            </div>
+
+                                        </div>
+                                        <div class="w-full   items-center">
+                                            <div class="w-full gap-2 flex justify-end max-[767px]:justify-center     ">
+                                                <button type="submit" name="submit"
+                                                    class="shadow bg-[#01cc85]  focus:shadow-outline hover:bg-green-500 focus:outline-none text-white font-bold py-2 px-8 rounded"
+                                                    type="button">
+                                                    บันทึก
+                                                    <i class="fa-regular fa-floppy-disk"></i></button>
+
+
+
+                                                <form action="./pdf/logs-print.php" method="POST" class="mb-4"
+                                                    id="printForm">
+                                                    <input type="hidden" name="__caseNumber" id="caseIDField" hidden>
+                                                    <button type="button" onclick="printPdf()"
+                                                    class="shadow bg-[#2f69fd]  focus:shadow-outline hover:bg-blue-500 focus:outline-none text-white font-bold py-2 px-8 rounded"
+                                                        >
+                                                        Print <i class="fas fa-print"></i>
                                                     </button>
-                                                </div>
-        </div>
+                                                </form>
+
+
+
+
+                                                <button onclick="history.back();"
+                                                    class="shadow bg-red-500  focus:shadow-outline hover:bg-red-400 focus:outline-none text-white font-bold py-2 px-8 rounded"
+                                                    type="button">
+                                                    กลับ
+                                                </button>
                                             </div>
-                                        </form>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </td>
-                </tr>
-                <?php 
-                endwhile; ?>
-            </tbody>
-        </table>
     </div>
+    </td>
+    </tr>
+    <?php 
+                endwhile; ?>
+    </tbody>
+    </table>
+</div>
 
 </div>
 <script>
@@ -315,5 +337,15 @@ editButtons.forEach(button => {
         caseRangeField.value = caseRange;
     });
 });
+
 </script>
 
+<script>
+    function printPdf() {
+        const caseID = document.querySelector('input[name="__caseNumber"]').value;
+        
+        document.getElementById('caseIDField').value = caseID;
+        
+        document.getElementById('printForm').submit();
+    }
+</script>
