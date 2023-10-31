@@ -122,7 +122,7 @@ include './Asset/SideNav.php';
             <div class="md:w-2/3">
             <button type="submit" name="submit" class="shadow bg-green-400  focus:shadow-outline hover:bg-green-500 focus:outline-none text-white font-bold py-2 px-8 rounded" type="button">
        บันทึก
-      </button>
+       <i class="fa-regular fa-floppy-disk"></i></button>
             <button onclick="history.back();" class="shadow bg-yellow-400  focus:shadow-outline hover:bg-yellow-500 focus:outline-none text-white font-bold py-2 px-8 rounded" type="button">
        กลับ
       </button>
