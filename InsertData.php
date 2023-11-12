@@ -19,8 +19,10 @@ include './Asset/SideNav.php';
 
 <div class="p-4 flex justify-center items-center h-screen sm:ml-64">
 <form class="w-full max-w-lg" action="./App/Create.php" method="post">
+
         <div class="md:flex md:items-center mb-6">
             <div class="md:w-1/3">
+                
                 <label class="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4" for="inline-full-name">
                     เลขแจ้งเคส
                 </label>
@@ -125,11 +127,7 @@ include './Asset/SideNav.php';
                                                         type="button">
                                                         บันทึก
                                                         <i class="fa-regular fa-floppy-disk"></i></button>
-                                                    <button type="submit" name="submit"
-                                                        class="shadow bg-[#2f69fd]  focus:shadow-outline hover:bg-blue-500 focus:outline-none text-white font-bold py-2 px-8 rounded"
-                                                        type="button">
-                                                        พิมพ์
-                                                        <i class="fa-solid fa-print"></i></button>
+                                                    
                                                     <button onclick="history.back();"
                                                         class="shadow bg-red-500  focus:shadow-outline hover:bg-red-400 focus:outline-none text-white font-bold py-2 px-8 rounded"
                                                         type="button">
