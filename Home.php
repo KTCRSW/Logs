@@ -1,7 +1,4 @@
 
-<?php header('location: Login.php');
- ?>
- 
 <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.0.0/flowbite.min.css" rel="stylesheet" />
 <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.0.0/flowbite.min.js"></script>
 <?php 
@@ -10,10 +7,10 @@
 require_once 'DB/db.php';
 include './Asset/Header.php';
 include './Asset/SideNav.php';
+
 ?>
 <div class="p-4 sm:ml-64 mt-20">
 
-    <form>
         <label for="default-search"
             class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">Search</label>
         <div class="relative">
@@ -24,13 +21,12 @@ include './Asset/SideNav.php';
                         d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
                 </svg>
             </div>
-            <input type="search" id="default-search"
+            <input type="search" id="live-search"
                 class="block w-full p-4 pl-10 text-sm text-black border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-white dark:border-gray-600 dark:placeholder-gray-400 dark:text-black dark:focus:ring-blue-500 dark:focus:border-blue-500"
                 placeholder="ค้นหา" required>
             <button type="submit"
                 class="text-white absolute right-2.5 bottom-2.5 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">ค้นหา</button>
         </div>
-    </form>
 
     <div class="relative overflow-x-auto shadow-md sm:rounded-lg mt-5">
 
@@ -294,7 +290,7 @@ include './Asset/SideNav.php';
                                                 <form action="" method="POST" class="mb-4"
                                                     id="">
                                                     <input type="hidden" name="" id="" hidden>
-                                                    <button type="button" onclick="printPdf()"
+                                                    <button type="button" 
                                                     class="shadow bg-red-500  focus:shadow-outline hover:bg-blue-500 focus:outline-none text-white font-bold py-2 px-8 rounded"
                                                         >กลับ <i class=""></i>
                                                     </button>
@@ -359,5 +355,30 @@ editButtons.forEach(button => {
         document.getElementById('caseIDField').value = caseID;
         
         document.getElementById('printForm').submit();
+    }
+</script>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const liveSearchInput = document.getElementById('live-search');
+
+        liveSearchInput.addEventListener('input', function () {
+            const searchValue = liveSearchInput.value.trim();
+            performLiveSearch(searchValue);
+        });
+    });
+
+    function performLiveSearch(query) {
+        fetch(`App/search.php?query=${query}`)
+            .then(response => response.json())
+            .then(data => updateTable(data));
+    }
+
+    function updateTable(data) {
+        const tbody = document.querySelector('tbody');
+        tbody.innerHTML = '';
+        data.forEach(item => {
+            const row = document.createElement('tr');
+            tbody.appendChild(row);
+        });
     }
 </script>

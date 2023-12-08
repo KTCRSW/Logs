@@ -31,7 +31,6 @@ include '../DB/db.php';
 $sql = 'SELECT * FROM mains WHERE LOGS_CASE_NUMBER = "'.$_POST['__caseNumber'].'"';
 $query = $db->query($sql);
 
-while ($item = mysqli_fetch_assoc($query)) {
 
 $pdf->SetFont('THSarabunNew','B',14);
 $pdf->Cell(0, 10,iconv('UTF-8', 'cp874','เลขแจ้งเคส : '. $item['LOGS_CASE_NUMBER']), 0, 1);
@@ -43,6 +42,7 @@ $pdf->Cell(30, 15, iconv('UTF-8', 'cp874', 'เบอร์โทรศัพท
 $pdf->Cell(30, 15, iconv('UTF-8', 'cp874', 'ระยะเวลาดำเนินงาน'), 1);
 $pdf->Cell(30, 15, iconv('UTF-8', 'cp874', 'ช่างผู้ดำเนินงาน'), 1);
 
+while ($item = mysqli_fetch_assoc($query)) {
 
 $pdf->Ln(); 
 $pdf->SetFont('THSarabunNew','',14);

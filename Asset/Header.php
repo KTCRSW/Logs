@@ -25,6 +25,11 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.8.0/dist/sweetalert2.all.min.js
     
     </style>
 </head>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js
+
+
+
+"></script>
 
 <body>
 
