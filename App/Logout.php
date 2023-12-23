@@ -1,7 +1,7 @@
 <?php 
 
     session_start();
-    header("Refresh:1.3; url=../login.php");
+    header("Refresh:1.3; url=../page/login.php");
     include("../Asset/Header.php");
     echo "<script>setTimeout(function() {
     Swal.fire({

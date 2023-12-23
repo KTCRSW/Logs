@@ -1,14 +1,16 @@
 
 <?php 
 
-    require './DB/db.php';
-    include './Asset/Header.php';
+require_once '../DB/db.php';
+include '../Asset/Header.php';
+
+
 
 
 ?>
-  <link rel="icon" type="image/x-icon" href="./Asset/Img/logo.png">
+  <link rel="icon" type="image/x-icon" href="../Asset/Img/logo.png">
 
-<form action="App/Auth.php" method="post">
+<form action="../App/Auth.php" method="post">
 <div class="min-h-screen sm:flex sm:flex-row mx-0 justify-center">
       <div class="flex-col flex  self-center p-10 sm:max-w-5xl xl:max-w-2xl  z-10">
         <div class="self-start hidden lg:flex flex-col  text-white">
@@ -20,7 +22,7 @@
       <div class="flex justify-center self-center   z-10">
         <div class="p-12 shadow-md bg-white mx-auto rounded-2xl w-100 ">
             <div class="mb-4">
-            <img src="Asset/Img/logo.png" alt="" width="128" height="128" style="text-align: center;
+            <img src="../Asset/Img/logo.png" alt="" width="128" height="128" style="text-align: center;
               display: block;
   margin-left: auto;
   margin-right: auto;
@@ -60,5 +62,5 @@
 </div>
 
 </form>
-<?php include 'Asset/Footer.php'; ?>
+<?php include '../Asset/Footer.php'; ?>
 

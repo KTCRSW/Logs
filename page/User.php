@@ -3,10 +3,12 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.0.0/flowbite.min.js"></script>
 <?php 
 
+require_once '../DB/db.php';
+include '../Asset/Header.php';
+include '../Asset/SideNav.php';
 
-require_once 'DB/db.php';
-include './Asset/Header.php';
-include './Asset/SideNav.php';
+
+
 
 ?>
 <div class="p-4 sm:ml-64 mt-20">

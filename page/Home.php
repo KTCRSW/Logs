@@ -4,9 +4,9 @@
 <?php 
 
 
-require_once 'DB/db.php';
-include './Asset/Header.php';
-include './Asset/SideNav.php';
+require_once '../DB/db.php';
+include '../Asset/Header.php';
+include '../Asset/SideNav.php';
 
 
 
@@ -24,7 +24,7 @@ include './Asset/SideNav.php';
                         d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
                 </svg>
             </div>
-            <input type="search" id="default-search"
+            <input type="search" id="live-search"
                 class="block w-full p-4 pl-10 text-sm text-black border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-white dark:border-gray-600 dark:placeholder-gray-400 dark:text-black dark:focus:ring-blue-500 dark:focus:border-blue-500"
                 placeholder="ค้นหา" required>
             <button type="submit"
@@ -403,4 +403,25 @@ function editForm() {
 
     document.getElementById('editForm').submit();
 }
+</script>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const searchInput = document.getElementById('live-search');
+        const tableRows = document.querySelectorAll('tbody tr');
+
+        searchInput.addEventListener('input', function () {
+            const searchTerm = searchInput.value.toLowerCase();
+
+            tableRows.forEach(row => {
+                const caseNumber = row.querySelector('.font-bold').textContent.toLowerCase();
+                const caseTechnician = row.querySelector('.px-6.py-4:nth-child(4)').textContent.toLowerCase();
+
+                if (caseNumber.includes(searchTerm) || caseTechnician.includes(searchTerm)) {
+                    row.style.display = 'table-row';
+                } else {
+                    row.style.display = 'none';
+                }
+            });
+        });
+    });
 </script>

@@ -14,7 +14,7 @@
     if(!$query){
         echo "<script>alert('ชื่อผู้ใช้หรือรหัสผ่านไม่ถูกต้อง');</script>";
     } else {
-        header("Refresh:1.3; url=../Home.php");
+        header("Refresh:1.3; url=../page/Home.php");
                     include("../Asset/Header.php");
                     echo "<script>setTimeout(function() {
                     Swal.fire({

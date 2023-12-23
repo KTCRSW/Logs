@@ -2,16 +2,18 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.0.0/flowbite.min.js"></script>
 <?php 
 
-include './Asset/Header.php';
-include './Asset/SideNav.php';
+
 
 ?>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.0.0/datepicker.min.js"></script>
 
 <?php 
+require_once '../DB/db.php';
+include '../Asset/Header.php';
+include '../Asset/SideNav.php';
 
-    require './DB/db.php';
-    include './Asset/Header.php';
+
+
 
 
 ?>
@@ -138,4 +140,4 @@ include './Asset/SideNav.php';
     </form>
   </div>
 
-<?php include 'Asset/Footer.php'; ?>
+  <?php include '../Asset/Footer.php'; ?>
