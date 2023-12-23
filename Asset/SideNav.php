@@ -38,6 +38,19 @@
                <span class="ml-3">หน้าแรก</span>
             </a>
          </li>
+         <!-- <li>
+            <a href="Details.php" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+            <svg xmlns="http://www.w3.org/2000/svg"  class="w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 3h12a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2z"/>
+    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M22 8H12"/>
+    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M22 12H12"/>
+    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M22 16H12"/>
+    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 20l-1 1M12 20l1 1"/>
+</svg>
+
+               <span class="ml-3">รายการทั้งหมด</span>
+            </a>
+         </li> -->
          <li>
             <a href="InsertData.php" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
                <svg class="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 18 18">
@@ -60,7 +73,8 @@
             
          </li>
       </ul>
-      <a href="App/Logout.php" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group mt-[630px]">
+      <hr>
+      <a href="App/Logout.php" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group ">
                <svg class="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 16">
                   <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 8h11m0 0L8 4m4 4-4 4m4-11h3a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-3"/>
                </svg>

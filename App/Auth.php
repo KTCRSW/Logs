@@ -10,7 +10,7 @@
 
     $Auth = "SELECT * FROM users where USR_NAME = '{$USR_NAME}' and USR_PWD = '".$USR_NAME."' ";
     $query = $db->query($Auth);
-
+    
     if(!$query){
         echo "<script>alert('ชื่อผู้ใช้หรือรหัสผ่านไม่ถูกต้อง');</script>";
     } else {
