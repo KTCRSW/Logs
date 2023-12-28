@@ -1,0 +1,8 @@
+{
+    "db" : {
+        "host" : "localhost",
+        "root" : "root",
+        "password" : "",
+        "database" : "logs_it_network" 
+    }
+}

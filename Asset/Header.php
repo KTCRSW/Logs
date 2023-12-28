@@ -22,7 +22,6 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.8.0/dist/sweetalert2.all.min.js
         font-family: 'Prompt', sans-serif;
     }
 
-    
     </style>
 </head>
 

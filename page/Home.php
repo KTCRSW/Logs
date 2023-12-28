@@ -163,7 +163,7 @@ include '../Asset/SideNav.php';
 
                                     <div class="px-6 py-6 lg:px-8">
                                         <h3 class="mb-4 text-xl font-medium text-gray-900 dark:text-white"></h3>
-                                        <form action="./App/Edit.php" method="POST" class="mb-4" id="editForm">
+                                        <form action="../App/Edit.php" method="POST" class="mb-4" id="editForm">
 
                                             <div class="md:flex md:items-center mb-6">
                                                 <div class="md:w-1/3">
@@ -300,7 +300,7 @@ include '../Asset/SideNav.php';
                                                         <i class="fa-regular fa-floppy-disk"></i>
                                                     </button>
                                         </form>
-                                        <form action="./pdf/logs-print-user.php" method="POST" class="mb-4"
+                                        <form action="../pdf/logs-print-user.php" method="POST" class="mb-4"
                                             id="printForm">
                                             <input type="" name="__caseTechnicianEdit" id="caseTechnicianField"
                                                 value="">
@@ -311,7 +311,7 @@ include '../Asset/SideNav.php';
                                                 <i class="fas fa-print"></i></button>
                                         </form>
                                         <form action="" method="POST" class="mb-4">
-
+                                            
                                             <button onclick="history.back();"
                                                 class="shadow bg-red-500  focus:shadow-outline hover:bg-red-400 focus:outline-none text-white font-bold py-2 px-8 rounded"
                                                 type="button">

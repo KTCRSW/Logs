@@ -8,6 +8,8 @@
     $USR_NAME = $_POST['__Username'];
     $USR_PWD = md5($_POST['__Password']);
 
+    if($USR_NAME != '')
+
     $Auth = "SELECT * FROM users where USR_NAME = '{$USR_NAME}' and USR_PWD = '".$USR_NAME."' ";
     $query = $db->query($Auth);
 

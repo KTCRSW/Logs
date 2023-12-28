@@ -1,13 +1,10 @@
 <?php 
 
     //logDataBase
-        $dbhost = 'localhost';
-        $dbroot = 'root';
-        $dbpass = '';
-        $dbname = 'logs_it_network';
 
-        $db = mysqli_connect($dbhost, $dbroot, $dbpass, $dbname)or die(mysqli_connect_error());
-
+        $getStr = file_get_contents('../Config/DatabaseConfig.json');
+        $database = json_decode($getStr, true);
+        $db = mysqli_connect($database['db']['host'], $database['db']['root'], $database['db']['password'], $database['db']['database'] )or die(mysqli_connect_error());
 
 
 ?>
