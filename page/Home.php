@@ -339,14 +339,14 @@ include '../Asset/SideNav.php';
             $total_pages = 1;
             ?>
 <div class="mt-5 px-5 ">
-    <a href="home.php?page=<?php echo $total_pages; ?>" aria-label="Next">
+    <a href="home.php?tola=<?php echo $total_pages; ?>" aria-label="Next">
     <span aria-hidden="true" style="font-size:16px;"><i class="fa-solid fa-angles-left"></i></span>
 </a>
     <?php for ($i = 1; $i <= $total_page; $i++) { ?>
-    <a href="home.php?page=<?php echo $i; ?>"><button class="btn btn-ghost border bordered"
-            style="background-color:#E3E3E3;color:gray;"><?php echo $i; ?></button></a>
+    <a href="home.php?tola=<?php echo $i; ?>"><button class=""
+            ><?php echo $i; ?></button></a>
     <?php } ?>
-    <a href="home.php?page=<?php echo $total_page; ?>" aria-label="Next">
+    <a href="home.php?tola=<?php echo $total_page; ?>" aria-label="Next">
         <span aria-hidden="true" style="font-size:16px;"><i class="fa-solid fa-angles-right"></i></span>
     </a>
 </div>
