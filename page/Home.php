@@ -302,8 +302,8 @@ include '../Asset/SideNav.php';
                                         </form>
                                         <form action="../pdf/logs-print-user.php" method="POST" class="mb-4"
                                             id="printForm">
-                                            <input type="" name="__caseTechnicianEdit" id="caseTechnicianField"
-                                                value="">
+                                            <!-- <input type="" name="__caseTechnicianEdit" id="caseTechnicianField"
+                                                value=""> -->
                                             <button type="submit" name="submit" onclick="printForm()"
                                                 class="shadow bg-[#2f69fd]  focus:shadow-outline hover:bg-blue-500 focus:outline-none text-white font-bold py-2 px-8 rounded"
                                                 type="button">
@@ -332,24 +332,33 @@ include '../Asset/SideNav.php';
 </tbody>
 </table>
 <?php
-            $sql2 = "SELECT * from mains ";
-            $query2 = $db->query($sql2);
-            $total_record = mysqli_num_rows($query2);
-            $total_page = ceil($total_record / $perpage);
-            $total_pages = 1;
-            ?>
-<div class="mt-5 px-5 ">
-    <a href="home.php?tola=<?php echo $total_pages; ?>" aria-label="Next">
-    <span aria-hidden="true" style="font-size:16px;"><i class="fa-solid fa-angles-left"></i></span>
-</a>
+    $sql2 = "SELECT COUNT(*) as total FROM mains";
+    $query2 = $db->query($sql2);
+    $result = mysqli_fetch_assoc($query2);
+    $total_record = $result['total'];
+    $total_page = ceil($total_record / $perpage);
+?>
+
+<div class="mt-5 px-5">
+    <a href="home.php?page=1" aria-label="Previous">
+        <span aria-hidden="true" style="font-size:16px;">
+            <i class="fa-solid fa-angles-left"></i>
+        </span>
+    </a>
+    
     <?php for ($i = 1; $i <= $total_page; $i++) { ?>
-    <a href="home.php?tola=<?php echo $i; ?>"><button class=""
-            ><?php echo $i; ?></button></a>
+        <a href="home.php?page=<?php echo $i; ?>">
+            <button class=""><?php echo $i; ?></button>
+        </a>
     <?php } ?>
-    <a href="home.php?tola=<?php echo $total_page; ?>" aria-label="Next">
-        <span aria-hidden="true" style="font-size:16px;"><i class="fa-solid fa-angles-right"></i></span>
+
+    <a href="home.php?page=<?php echo $total_page; ?>" aria-label="Next">
+        <span aria-hidden="true" style="font-size:16px;">
+            <i class="fa-solid fa-angles-right"></i>
+        </span>
     </a>
 </div>
+
 </div>
 
 </div>
