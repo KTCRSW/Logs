@@ -19,10 +19,13 @@ include '../Asset/SideNav.php';
 ?>
 
 
-<div class="p-4 flex justify-center items-center h-screen sm:ml-64 mt-3">
+<div class="p-4 flex justify-center items-center h-screen sm:ml-64 mt-5 ">
 
-        <form class="w-full max-w-lg" action="../App/Create.php" method="post">
-
+    <form class="w-full max-w-lg" action="../App/Create.php" method="post">
+    <center>
+        <p class="mt-[5%] mb-5" style="font-size: 22px;">บันทึกข้อมูล</p>
+        <hr class="mb-5">
+    </center>        
 <div class="md:flex md:items-center mb-6 justify-content-center">
     <div class="md:w-1/3">
 
@@ -140,4 +143,3 @@ include '../Asset/SideNav.php';
 
 </div>
 
-<?php include '../Asset/Footer.php'; ?>
