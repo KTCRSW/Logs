@@ -8,7 +8,7 @@
     ";
     $query = $db->query($sql);
     if($query){
-        header("Refresh:1.3; url=../page/Home.php");
+        header("location: ../page/Home.php");
                 include("../Asset/Header.php");
                 echo "<script>setTimeout(function() {
                 Swal.fire({

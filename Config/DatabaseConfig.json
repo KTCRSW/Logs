@@ -2,7 +2,7 @@
     "db" : {
         "host" : "localhost",
         "root" : "root",
-        "password" : "",
+        "password" : "kittichai",
         "database" : "logs_it_network" 
     }
 }

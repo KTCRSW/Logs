@@ -58,7 +58,7 @@ include '../Asset/SideNav.php';
                     <th scope="col" class="px-6 py-3">
                         <div class="flex items-center">
                             วันที่แจ้งดำเนินงาน
-                            <a href="#"><svg class="w-3 h-3 ml-1.5" aria-hidden="true"
+                            <a href="#" id="showData"><svg class="w-3 h-3 ml-1.5" aria-hidden="true"
                                     xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
                                     <path
                                         d="M8.574 11.024h6.852a2.075 2.075 0 0 0 1.847-1.086 1.9 1.9 0 0 0-.11-1.986L13.736 2.9a2.122 2.122 0 0 0-3.472 0L6.837 7.952a1.9 1.9 0 0 0-.11 1.986 2.074 2.074 0 0 0 1.847 1.086Zm6.852 1.952H8.574a2.072 2.072 0 0 0-1.847 1.087 1.9 1.9 0 0 0 .11 1.985l3.426 5.05a2.123 2.123 0 0 0 3.472 0l3.427-5.05a1.9 1.9 0 0 0 .11-1.985 2.074 2.074 0 0 0-1.846-1.087Z" />
@@ -220,11 +220,11 @@ include '../Asset/SideNav.php';
                                                         class="bg-gray-200 border border-gray-200 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-green-400 block w-full pl-10 p-2.5 "
                                                         placeholder="<?php 
                     
-                    echo date("m-d-Y");
+                    echo date("d-m-Y");
                     
                     ?>" name="__caseDate" VALUE="<?php 
                     
-                    echo date("m-d-Y");
+                    echo date("d-m-Y");
                     
                     ?>" required>
                                                 </div>
@@ -310,9 +310,9 @@ include '../Asset/SideNav.php';
                                                 พิมพ์
                                                 <i class="fas fa-print"></i></button>
                                         </form>
-                                        <form action="" method="POST" class="mb-4">
-                                            
-                                            <button onclick="history.back();"
+                                        <form action="../App/Remove.php" method="POST" class="mb-4">
+                                            <input type="text" name="__caseID" id="" value="<?=$row['LOGS_ID']?>" hidden>
+                                            <button type="submit"
                                                 class="shadow bg-red-500  focus:shadow-outline hover:bg-red-400 focus:outline-none text-white font-bold py-2 px-8 rounded"
                                                 type="button">
                                                 ลบ
@@ -337,6 +337,7 @@ include '../Asset/SideNav.php';
     $result = mysqli_fetch_assoc($query2);
     $total_record = $result['total'];
     $total_page = ceil($total_record / $perpage);
+        $current_page = isset($_GET['page']) ? $_GET['page'] : 1;
 ?>
 
 <div class="mt-5 px-5">

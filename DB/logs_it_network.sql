@@ -43,10 +43,6 @@ CREATE TABLE `mains` (
 -- Dumping data for table `mains`
 --
 
-INSERT INTO `mains` (`LOGS_ID`, `LOGS_DATE`, `LOGS_CASE_NUMBER`, `LOGS_CASE_CONTACT`, `LOGS_LOCATION`, `LOGS_RANGE_TIME`, `LOGS_PHONE`, `LOGS_TECHNICIANS`) VALUES
-(1, '10/18/2023', '000000001', 'ฮอนด้า', 'ทดสอบ', '10', '0959611962', 'อาร์ต'),
-(4, '10/17/2023', 'Talad#6470', 'Centercom', 'ยูดีทาวน์, อุดรธานี', '7', '0632231949', 'เนส'),
-(6, '10/30/2023', '19102566-15', 'คุณ ปราณิสา ', 'สตภ.6 อุดรธานี', '1 วัน', '0956307844', 'โอ๊ค');
 
 -- --------------------------------------------------------
 
