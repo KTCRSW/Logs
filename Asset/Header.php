@@ -11,7 +11,7 @@
 https://cdn.jsdelivr.net/npm/sweetalert2@11.8.0/dist/sweetalert2.all.min.js
 "></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 <script src="https://cdnjs.com/libraries/Chart.js"></script>
 <script src="https://www.jsdelivr.com/package/npm/chart.js?path=dist"></script>
 <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
