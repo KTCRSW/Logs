@@ -27,7 +27,6 @@ $sum1 = mysqli_num_rows($query1);
 
 
 $dataPoints = array(
-    array("label" => "สิงหาคม 2023", "y" => ),
     array("label" => "กันยายน 2023", "y" => ),
     array("label" => "ตุลาคม 2023", "y" => ),
     array("label" => "พฤศจิกายน 2023", "y" => ),
