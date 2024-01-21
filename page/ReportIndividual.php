@@ -354,34 +354,7 @@ $_SESSION['TechnicianSession'] = $_POST['__caseTechnician'];
              } ?>
 </tbody>
 </table>
-<?php
-    $sql2 = "SELECT COUNT(*) as total FROM mains WHERE LOGS_TECHNICIAN = '$technician'";
-    $query2 = $db->query($sql2);
-    $result = mysqli_fetch_assoc($query2);
-    $total_record = $result['total'];
-    $total_page = ceil($total_record / $perpage);
-        $current_page = isset($_GET['page']) ? $_GET['page'] : 1;
-?>
 
-<div class="mt-5 px-5">
-    <a href="ReportIndividual.php?page=1" aria-label="Previous">
-        <span aria-hidden="true" style="font-size:16px;">
-            <i class="fa-solid fa-angles-left"></i>
-        </span>
-    </a>
-    
-    <?php for ($i = 1; $i <= $total_page; $i++) { ?>
-        <a href="ReportIndividual.php?page=<?php echo $i; ?>">
-            <button class=""><?php echo $i; ?></button>
-        </a>
-    <?php } ?>
-
-    <a href="ReportIndividual.php?page=<?php echo $total_page; ?>" aria-label="Next">
-        <span aria-hidden="true" style="font-size:16px;">
-            <i class="fa-solid fa-angles-right"></i>
-        </span>
-    </a>
-</div>
 
 </div>
 

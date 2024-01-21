@@ -37,3 +37,4 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.8.0/dist/sweetalert2.all.min.js
 </body>
 
 </html>
+<?php error_reporting(0); ?>

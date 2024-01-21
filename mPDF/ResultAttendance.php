@@ -63,7 +63,7 @@ ob_start();
     <?php
     require '../DB/db.php';
 
-    $technician = $_POST['Technician'];
+    // $technician = $_POST['Technician'];
     $sql = "SELECT * FROM mains";
     $result = $db->query($sql);
 
