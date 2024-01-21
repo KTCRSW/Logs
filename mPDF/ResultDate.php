@@ -1,5 +1,5 @@
 <?php
-    header("Location: ResultIndividual.pdf");
+    header("Location: '".date('d-m-Y')."'.pdf");
 
 require_once __DIR__ . '/vendor/autoload.php';
 
@@ -63,8 +63,8 @@ ob_start();
     <?php
     require '../DB/db.php';
 
-    $technician = $_GET['technician'];
-    $sql = "SELECT * FROM mains WHERE LOGS_TECHNICIANS = '$technician'";
+    $date = $_GET['__date'];
+    $sql = "SELECT * FROM mains WHERE LOGS_DATE = '$date'";
     $result = $db->query($sql);
 
     $totalRows = mysqli_num_rows($result);

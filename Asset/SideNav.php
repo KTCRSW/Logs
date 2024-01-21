@@ -38,7 +38,7 @@
                     <a href="./ReportIndividual.php" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">รายงานรายบุคคล</a>
                   </li>
                   <li>
-                    <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">รายงานราย วัน/เดือน/ปี</a>
+                    <a href="./ReportDate.php" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">รายงานราย วัน/เดือน/ปี</a>
                   </li>
                 </ul>
                 <div class="py-1">

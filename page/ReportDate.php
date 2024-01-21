@@ -1,3 +1,4 @@
+
 <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.0.0/flowbite.min.css" rel="stylesheet" />
 <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.0.0/flowbite.min.js"></script>
 <?php 
@@ -7,12 +8,11 @@ require_once '../DB/db.php';
 include '../Asset/Header.php';
 include '../Asset/SideNav.php';
 
-
-
+$_SESSION['Date'] = $_POST['__caseDate'];
+echo $_SESSION['__caseDate'];
 ?>
 <div class="p-4 sm:ml-64 mt-20">
-    <hr class='mb-2'>
-    <p class="mb-3" style="font-size:18px;">ระบบบันทึกการทำงาน</p>
+
     <form action="" method="post">
         <label for="default-search"
             class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">Search</label>
@@ -32,21 +32,35 @@ include '../Asset/SideNav.php';
         </div>
     </form>
 
-
     <div class="w-full   items-center">
         <div class="w-full gap-2 flex justify-end max-[767px]:justify-center     ">
-            <form method="POST" class="" id="">
-                <a type="button" href="./InsertData.php" style="display: inline-block;"
-                    class="shadow bg-[#01cc85] focus:shadow-outline hover:bg-blue-500 focus:outline-none text-white font-bold py-2 px-8 rounded">เพิ่มรายงาน
-                    <i class="fa-solid fa-plus"></i></a>
-            </form>
-            <form>
-                <a type="button" href="../mPDF/ResultAttendance.php" name="submit" style="display: inline-block;"
+        <form method="POST" class="" id="" action='<?php $_SERVER['PHP_SELF']; ?>'>
+    <input datepicker type="date" style="display: inline-block;" class="bg-gray-200 appearance-none border-2 border-gray-200 rounded py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-green-400 " placeholder="<?php
+
+echo date("m-d-Y");
+
+?>" name="__caseDate" VALUE="<?php
+
+echo date("m-d-Y");
+
+?>" required>
+    </select>
+    <span>
+    <button type="submit" name="submit" class="shadow bg-[#01cc85] focus:shadow-outline hover:bg-white-500 focus:outline-none text-white font-bold py-2 px-8 rounded">
+    ดูรายงาน
+</button>
+    </span>
+   
+</form>
+<form action="../mPDF/ResultIndividual.php">
+                <input type="text" name="technician" value="<?=$_SESSION['TechnicianSession']?>" hidden>
+                <button type="submit"   style="display: inline-block;"
                     class="shadow bg-[#2f69fd] focus:shadow-outline hover-bg-blue-500 focus:outline-none text-white font-bold py-2 px-8 rounded"
-                    type="button">พิมพ์ <i class="fas fa-print"></i></a>
+                    type="button">พิมพ์ <i class="fas fa-print"></i></button>
             </form>
         </div>
     </div>
+
     <div class="relative overflow-x-auto shadow-md sm:rounded-lg mt-2">
 
         <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
@@ -93,20 +107,22 @@ include '../Asset/SideNav.php';
             </thead>
             <tbody>
                 <?php 
-                
-                $rowsPerPage = isset($_POST['rowsPerPage']) ? intval($_POST['rowsPerPage']) : 10;
-
-                $perpage = $rowsPerPage;
-                if (isset($_GET['page'])) {
-                    $page = $_GET['page'];
-                } else {
-                    $page = 1;
-                }
-
-                $start = ($page - 1) * $perpage;
-                $sql = "SELECT * from mains ORDER BY LOGS_DATE ASC limit {$start}, {$perpage}";
-                $query = $db->query($sql);
-
+                        if(isset($_POST['submit'])){
+                            $perpage = 10;
+                            if (isset($_GET['page'])) {
+                                $page = $_GET['page'];
+                            } else {
+                                $page = 1;
+                            }
+                            
+                            $date = $_POST['__caseDate'];
+                            // echo $technician;   
+                        
+                            $start = ($page - 1) * $perpage;
+                            $sql = "SELECT * from mains WHERE LOGS_DATE = '$date' ORDER BY LOGS_DATE ASC limit {$start} , {$perpage}";
+                            $query = $db->query($sql);
+                        
+   
                     while($row = mysqli_fetch_assoc($query)):
                     
                 
@@ -141,7 +157,8 @@ include '../Asset/SideNav.php';
                             data-case-contact="<?php echo $row['LOGS_CASE_CONTACT']; ?>"
                             data-case-phone="<?php echo $row['LOGS_PHONE']; ?>"
                             data-case-range="<?php echo $row['LOGS_RANGE_TIME']; ?>"
-                            class="font-bold text-blue-600 text-red-300  hover:underline" style="text-decoration:none;">
+                            class="font-bold text-blue-600 text-red-300  hover:underline"
+                            style="text-decoration:none;">
                             <i class="fa-regular fa-pen-to-square text-red-300"></i>แก้ไข
                         </button>
 
@@ -296,8 +313,7 @@ include '../Asset/SideNav.php';
                                                 <div
                                                     class="w-full gap-2 flex justify-end max-[767px]:justify-center     ">
 
-                                                    <input type="hidden" name="__caseNumberEdit" id="caseNumberField"
-                                                        value="">
+                                                    <input type="hidden" name="__caseNumberEdit" id="caseNumberField" value="">
                                                     <button type="submit" onclick="editForm()"
                                                         class="shadow bg-[#01cc85]  focus:shadow-outline hover:bg-blue-500 focus:outline-none text-white font-bold py-2 px-8 rounded">บันทึก
                                                         <i class="fa-regular fa-floppy-disk"></i>
@@ -314,8 +330,7 @@ include '../Asset/SideNav.php';
                                                 <i class="fas fa-print"></i></button>
                                         </form>
                                         <form action="../App/Remove.php" method="POST" class="mb-4">
-                                            <input type="text" name="__caseID" id="" value="<?=$row['LOGS_ID']?>"
-                                                hidden>
+                                            <input type="text" name="__caseID" id="" value="<?=$row['LOGS_ID']?>" hidden>
                                             <button type="submit"
                                                 class="shadow bg-red-500  focus:shadow-outline hover:bg-red-400 focus:outline-none text-white font-bold py-2 px-8 rounded"
                                                 type="button">
@@ -332,11 +347,12 @@ include '../Asset/SideNav.php';
 </td>
 </tr>
 <?php 
-                endwhile; ?>
+                endwhile;
+             } ?>
 </tbody>
 </table>
 <?php
-    $sql2 = "SELECT COUNT(*) as total FROM mains";
+    $sql2 = "SELECT COUNT(*) as total FROM mains WHERE LOGS_TECHNICIAN = '$technician'";
     $query2 = $db->query($sql2);
     $result = mysqli_fetch_assoc($query2);
     $total_record = $result['total'];
@@ -345,19 +361,19 @@ include '../Asset/SideNav.php';
 ?>
 
 <div class="mt-5 px-5">
-    <a href="home.php?page=1" aria-label="Previous">
+    <a href="ReportIndividual.php?page=1" aria-label="Previous">
         <span aria-hidden="true" style="font-size:16px;">
             <i class="fa-solid fa-angles-left"></i>
         </span>
     </a>
-
+    
     <?php for ($i = 1; $i <= $total_page; $i++) { ?>
-    <a href="home.php?page=<?php echo $i; ?>">
-        <button class=""><?php echo $i; ?></button>
-    </a>
+        <a href="ReportIndividual.php?page=<?php echo $i; ?>">
+            <button class=""><?php echo $i; ?></button>
+        </a>
     <?php } ?>
 
-    <a href="home.php?page=<?php echo $total_page; ?>" aria-label="Next">
+    <a href="ReportIndividual.php?page=<?php echo $total_page; ?>" aria-label="Next">
         <span aria-hidden="true" style="font-size:16px;">
             <i class="fa-solid fa-angles-right"></i>
         </span>
@@ -419,24 +435,23 @@ function editForm() {
 }
 </script>
 <script>
-document.addEventListener('DOMContentLoaded', function() {
-    const searchInput = document.getElementById('live-search');
-    const tableRows = document.querySelectorAll('tbody tr');
+    document.addEventListener('DOMContentLoaded', function () {
+        const searchInput = document.getElementById('live-search');
+        const tableRows = document.querySelectorAll('tbody tr');
 
-    searchInput.addEventListener('input', function() {
-        const searchTerm = searchInput.value.toLowerCase();
+        searchInput.addEventListener('input', function () {
+            const searchTerm = searchInput.value.toLowerCase();
 
-        tableRows.forEach(row => {
-            const caseNumber = row.querySelector('.font-bold').textContent.toLowerCase();
-            const caseTechnician = row.querySelector('.px-6.py-4:nth-child(4)').textContent
-                .toLowerCase();
+            tableRows.forEach(row => {
+                const caseNumber = row.querySelector('.font-bold').textContent.toLowerCase();
+                const caseTechnician = row.querySelector('.px-6.py-4:nth-child(4)').textContent.toLowerCase();
 
-            if (caseNumber.includes(searchTerm) || caseTechnician.includes(searchTerm)) {
-                row.style.display = 'table-row';
-            } else {
-                row.style.display = 'none';
-            }
+                if (caseNumber.includes(searchTerm) || caseTechnician.includes(searchTerm)) {
+                    row.style.display = 'table-row';
+                } else {
+                    row.style.display = 'none';
+                }
+            });
         });
     });
-});
 </script>

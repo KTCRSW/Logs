@@ -68,8 +68,7 @@ ob_start();
     $result = $db->query($sql);
 
     $totalRows = mysqli_num_rows($result);
-    $rowsPerPage = 24;
-
+    $rowsPerPage = $totalRows;
     $currentPage = 1;
 
     while ($row = mysqli_fetch_assoc($result)) {

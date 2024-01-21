@@ -12,7 +12,8 @@ $_SESSION['TechnicianSession'] = $_POST['__caseTechnician'];
 
 ?>
 <div class="p-4 sm:ml-64 mt-20">
-
+<hr class='mb-2'>
+    <p class="mb-3" style="font-size:18px;">ระบบบันทึกการทำงาน > <span class="text-gray" style="color:grey;">รายงานรายบุคคล</span></p>
     <form action="" method="post">
         <label for="default-search"
             class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">Search</label>
@@ -110,7 +111,7 @@ $_SESSION['TechnicianSession'] = $_POST['__caseTechnician'];
             <tbody>
                 <?php 
                         if(isset($_POST['submit'])){
-                            $perpage = 5;
+                            $perpage = 10;
                             if (isset($_GET['page'])) {
                                 $page = $_GET['page'];
                             } else {
