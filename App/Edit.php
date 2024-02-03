@@ -18,7 +18,6 @@
                     window.location = '../index.php';
                 });
                  });</script>";   
-        
     } else {
         echo "Err";
     }

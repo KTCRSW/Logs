@@ -1,35 +1,21 @@
 <?php 
 
-
     session_start();
     require_once '../DB/db.php';
     include '../Asset/Header.php';
     
     $USR_NAME = $_POST['__Username'];
-    $USR_PWD = md5($_POST['__Password']);
+    $USR_PWD = $_POST['__Password'];  
 
-    if($USR_NAME != '')
+    $sql = "SELECT * FROM users WHERE USR_NAME = '".$USR_NAME."' AND USR_PWD = '".md5($USR_PWD)."' ";
+    $result = $db->query($sql);
+    $obj = mysqli_fetch_array($result);
+    $num = mysqli_num_rows($result);
 
-    $Auth = "SELECT * FROM users where USR_NAME = '{$USR_NAME}' and USR_PWD = '".$USR_NAME."' ";
-    $query = $db->query($Auth);
-
-    if(!$query){
-        echo "<script>alert('ชื่อผู้ใช้หรือรหัสผ่านไม่ถูกต้อง');</script>";
+    if($obj){  
+        echo json_encode(array('status' => '1', 'message' => 'Success'));
     } else {
-        header("Refresh:1.3; url=../page/Home.php");
-                    include("../Asset/Header.php");
-                    echo "<script>setTimeout(function() {
-                    Swal.fire({
-                        icon: 'success',
-                        title: 'สำเร็จ',
-                        text: 'ระบบกำลังพาคุณไป' ,
-                        showCancelButton: false,
-                        showConfirmButton: false
-                    }, function() {
-                        window.location = '../../Frontend/teacher/index.php';
-                    });
-                     });</script>";   
+        echo json_encode(array('status' => '0', 'message' => 'Error'));
     }
-
 
 ?>

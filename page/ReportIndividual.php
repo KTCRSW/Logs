@@ -40,12 +40,14 @@ $_SESSION['TechnicianSession'] = $_POST['__caseTechnician'];
         <option selected disabled>-- โปรดเลือกชื่อ --</option>
         
         <?php 
-        $getJson = file_get_contents('../Config/TechnicianConfig.json');
-        $json = json_decode($getJson, true);
+        $getData = "SELECT * FROM technician";
+        $result = $db->query($getData);
         
-        foreach($json as $data => $value){
-            echo '<option>'.$data.'</option>';
+        
+        while($data = mysqli_fetch_assoc($result)){
+            echo '<option>'.$data['TechnicianName'].'</option>';
         }
+        
         ?>    
     </select>
     <span>

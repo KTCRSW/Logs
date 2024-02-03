@@ -8,21 +8,9 @@
     ";
     $query = $db->query($sql);
     if($query){
-        header("location: ../page/Home.php");
-                include("../Asset/Header.php");
-                echo "<script>setTimeout(function() {
-                Swal.fire({
-                    icon: 'success',
-                    title: 'สำเร็จ',
-                    text: 'ระบบกำลังพาคุณไป' ,
-                    showCancelButton: false,
-                    showConfirmButton: false
-                }, function() {
-                    window.location = '../../Frontend/teacher/index.php';
-                });
-                 });</script>";   
+        echo json_encode(array('status' => '1', 'message' => 'Success'));
     } else {
-        echo "Err";
+        echo json_encode(array('status' => '0', 'message' => 'Error'));
     }
 
 ?>
