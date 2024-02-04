@@ -63,9 +63,10 @@ include '../Asset/Header.php';
 </form>
 <script type="text/javascript">
   $(document).ready(function() {
-    $('#Submit').click(function() {
+    $('#Submit').click(function(e) {
+      e.preventDefault();
       var EmptyData = false;
-      $('input[type="text"]' && 'input[type="password"]').each(function() {
+      $('input[type="text"], input[type="password"]').each(function() {
         if ($(this).val().trim() === "") {
           Swal.fire({
             icon: 'warning',
@@ -78,16 +79,17 @@ include '../Asset/Header.php';
           return false;
         }
       });
+
       if (EmptyData) {
         return;
       }
+
       $.ajax({
         type: "POST",
         url: "../App/Auth.php",
         data: $("#InsertForm").serialize(),
-        dataType: 'json',
-        success: function(result) {
-          if (result.status == 1) { 
+        success: function(res) {
+          if (res.status == 0) {
             Swal.fire({
               icon: 'error',
               title: 'เกิดข้อผิดพลาด',
@@ -100,9 +102,25 @@ include '../Asset/Header.php';
               icon: 'success',
               title: 'สำเร็จ',
               text: 'เข้าสู่ระบบสำเร็จ',
-              showCancelButton: false,
-              showConfirmButton: true
+              timer: 2000,
+              timerProgressBar: true,
+              didOpen: () => {
+                Swal.showLoading();
+                const timer = Swal.getPopup().querySelector("b");
+                timerInterval = setInterval(() => {
+                  timer.textContent = `${Swal.getTimerLeft()}`;
+                }, 100);
+              },
+              willClose: () => {
+                clearInterval(timerInterval);
+                location.href = './Home.php';
+              }
+            }).then((result) => {
+              if (result.dismiss === Swal.DismissReason.timer) {
+                console.log("I was closed by the timer");
+              }
             });
+
           }
         }
       });

@@ -25,8 +25,10 @@ include '../Asset/SideNav.php';
         </div>
     </form>
 
+    <a href="./AddNewTechnician.php" data-modal-target="authentication-modal" data-modal-toggle="authentication-modal" class="shadow bg-[#01cc85] focus:shadow-outline hover:bg-green-300 mb-2 focus:outline-none text-white font-bold py-2 px-8 rounded" style="text-decoration:none; ">
+        เพิ่มรายชื่อพนักงาน
+    </a>
     <div class="relative overflow-x-auto shadow-md sm:rounded-lg mt-5">
-
         <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
             <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                 <tr>
@@ -91,7 +93,7 @@ include '../Asset/SideNav.php';
                 ?>
                     <tr class="bg-white border-b dark:bg-white dark:border-gray-200">
                         <th scope="row" class="px-6 py-4 font-bold text-gray-900 whitespace-nowrap dark:text-black">
-                            <?php echo $data['TechnicianID']; ?>
+                            <?php echo "ITID00" . $data['TechnicianID']; ?>
                         </th>
                         <td class="px-6 py-4 text-black">
                             <?php echo $data['TechnicianName']; ?>
@@ -104,17 +106,26 @@ include '../Asset/SideNav.php';
                             <?php echo $data['TechnicianAddress']; ?>
                         </td>
                         <td class="px-6 py-4 text-black">
-                            <?php 
-                            
-                            
-                            if($data['TechnicianStatus'] == 0){
+                            <?php
+
+
+                            if ($data['TechnicianStatus'] == 0) {
                                 echo '<p style="color:red;">พ้นสภาพการทำงาน</p>';
-                            } else if($data['TechnicianStatus'] == 1){
+                            } else if ($data['TechnicianStatus'] == 1) {
                                 echo '<p style="color:green;">พนักงานทั่วไป</p>';
                             }
 
-                            
+
                             ?>
+                        </td>
+                        <td>
+                            <form action="" id="removeData" method="POST">
+                                <input type="text" name="__UserID" id="__UserID" value="<?php echo $data['TechnicianID']; ?>" hidden>
+                                <button type="buttton" id="removeSubmit" class=" mt-2 shadow bg-[red] focus:shadow-outline hover:bg-red-600 mb-2 focus:outline-none text-white font-bold py-2 px-8 rounded">
+                                    <i class="bx bx-trash"></i>
+                                </button>
+                            </form>
+
                         </td>
                     </tr>
                 <?php
@@ -124,39 +135,7 @@ include '../Asset/SideNav.php';
     </div>
 
 </div>
-<script>
-    const editButtons = document.querySelectorAll('[data-modal-toggle]');
 
-    editButtons.forEach(button => {
-        button.addEventListener('click', function() {
-            const modalId = button.getAttribute('data-modal-target');
-            const caseNumber = button.getAttribute('data-case-number');
-            const caseLocation = button.getAttribute('data-case-location');
-            const caseDate = button.getAttribute('data-case-date');
-            const caseTechnician = button.getAttribute('data-case-technician');
-            const caseContact = button.getAttribute('data-case-contact');
-            const casePhone = button.getAttribute('data-case-phone');
-            const caseRange = button.getAttribute('data-case-range');
-
-            const modal = document.getElementById(modalId);
-            const caseNumberField = modal.querySelector('input[name="__caseNumber"]');
-            const caseLocationField = modal.querySelector('input[name="__caseLocation"]');
-            const caseDateField = modal.querySelector('input[name="__caseDate"]');
-            const caseTechnicianField = modal.querySelector('input[name="__caseTechnician"]');
-            const caseContactField = modal.querySelector('input[name="__caseContact"]');
-            const casePhoneField = modal.querySelector('input[name="__casePhone"]');
-            const caseRangeField = modal.querySelector('input[name="__caseRange"]');
-
-            caseNumberField.value = caseNumber;
-            caseLocationField.value = caseLocation;
-            caseDateField.value = caseDate;
-            caseTechnicianField.value = caseTechnician;
-            caseContactField.value = caseContact;
-            casePhoneField.value = casePhone;
-            caseRangeField.value = caseRange;
-        });
-    });
-</script>
 
 <script>
     function printPdf() {
@@ -166,4 +145,55 @@ include '../Asset/SideNav.php';
 
         document.getElementById('printForm').submit();
     }
+    
+    $(document).ready(function() {
+        $('#removeSubmit').click(function() {
+            var EmptyData = false;
+            $('input[type="__UserID"]').each(function() {
+                if ($(this).val().trim() === "") {
+                    Swal.fire({
+                        icon: 'warning',
+                        title: 'คำเตือน',
+                        text: 'กรุณากรอกข้อมูลให้ครบถ้วน',
+                        showCancelButton: false,
+                        showConfirmButton: true
+                    });
+                    EmptyData = true;
+                    return false;
+                }
+            });
+            if (EmptyData) {
+                return;
+            }
+            $.ajax({
+                type: "POST",
+                url: "../App/RemoveUser.php",
+                data: $("#removeData").serialize(),
+                success: function(result) {
+                    if (result.status == 1) {
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'เกิดข้อผิดพลาด',
+                            text: 'บันทึกข้อมูลไม่สำเร็จ',
+                            showCancelButton: false,
+                            showConfirmButton: true
+                        }).then(function() {
+                            location.reload();
+                        });
+                    } else {
+                        Swal.fire({
+                            icon: 'success',
+                            title: 'สำเร็จ',
+                            text: 'ลบข้อมูลสำเร็จ',
+                            showCancelButton: false,
+                            showConfirmButton: true
+                        }).then(function() {
+                            location.reload();
+                        });
+                    }
+                }
+            });
+        });
+    });
 </script>
+
